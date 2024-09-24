@@ -24,8 +24,6 @@
     "homepage": "https://scarlettdai517.github.io/reddit-client",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
-
   },
   "eslintConfig": {
     "extends": [
