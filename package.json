@@ -21,9 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "homepage": "https://scarlettdai517.github.io/reddit-client",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "homepage": "https://scarlettdai517.github.io/reddit-client"
+    "deploy": "gh-pages -d build"
+
 
   },
   "eslintConfig": {
