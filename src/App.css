@@ -1,38 +1,229 @@
+/* Main App container */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header section with rainbow gradient */
+.App-header {
+  background: linear-gradient(90deg, 
+    red, 
+    orange, 
+    yellow, 
+    green, 
+    blue, 
+    indigo, 
+    violet
+  );
+  padding: 40px 20px;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Glowing effect around the header text */
+.App-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  animation: pulse 4s ease-in-out infinite;  /* Smooth pulsing animation */
+}
+
+/* Animation for the pulsing glow effect */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Header text with white shadow */
+/* Header text with white shadow and semi-transparent background */
+.App-header-text {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  background: rgba(128, 128, 128, 0.5); /* Semi-transparent gray background */
+  border-radius: 10px; /* Slightly rounded corners */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
+               0 0 20px rgba(255, 255, 255, 0.8); /* White shadow for more depth */
+  animation: text-glow 3s ease-in-out infinite alternate;
+  z-index: 1; /* Ensure the background stays below the text */
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
+@keyframes text-glow {
   from {
-    transform: rotate(0deg);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
+                 0 0 10px rgba(255, 255, 255, 0.5);
   }
   to {
-    transform: rotate(360deg);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
+                 0 0 20px rgba(255, 255, 255, 0.8);
   }
+}
+
+/* Search container styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Search input box */
+input[type="text"] {
+  padding: 12px;
+  width: 350px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+/* Sort dropdown */
+select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+/* Search button */
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Center the entire category section */
+.category-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Category selector styles */
+.category-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Category button styles */
+.category-button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;  /* Rounded pill shape */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+}
+
+.category-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);  /* Slight lift on hover */
+}
+
+.category-button:active {
+  transform: translateY(1px);  /* Button pressed effect */
+  background-color: #004080;   /* Darker blue on click */
+}
+
+/* Post container styles */
+.post-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Post footer styles */
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Post votes styles */
+.post-votes {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #ff4500;
+  font-weight: bold;
+}
+
+/* Comments button styles */
+.post-comments button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.post-comments button:hover {
+  background-color: #0056b3;
+}
+
+/* Comments section styles */
+.comments-section {
+  margin-top: 20px;
+}
+
+.comments-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments-section li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section p {
+  margin: 5px 0;
 }

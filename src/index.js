@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';  // 注意这里的引入
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// 获取 root 节点
+const rootElement = document.getElementById('root');
+
+// 使用 createRoot 创建新的 React 根节点
+const root = ReactDOM.createRoot(rootElement);
+
+// 渲染 App 组件，并用 Provider 包裹以提供 Redux store
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
