@@ -11,9 +11,9 @@ const PostList = () => {
   const videoRefs = useRef([]);
 
   useEffect(() => {
-    // 页面加载时默认获取 popular 帖子
+    // popular posts are obtained by default when the page loads
     if (!posts.length) {
-      dispatch(fetchPosts('popular')); // Fetching 'popular' posts on load
+      dispatch(fetchPosts('popular')); 
     }
 
     const currentVideoRefs = videoRefs.current;

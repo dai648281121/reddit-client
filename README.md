@@ -3,6 +3,32 @@
 
 This project is a simplified front-end application built using React and Redux. It integrates with the Reddit API to allow users to browse popular posts, filter by categories, search for posts, and view detailed post information, all with a clean and focused user experience.
 
+### Front-End Development:
+- **React**: For building dynamic user interfaces with reusable components.
+- **Redux**: For managing global state across the application.
+- **JavaScript (ES6+)**: Modern JavaScript syntax and features (e.g., arrow functions, destructuring, async/await).
+- **HTML5**: Structuring the content of the web application.
+- **CSS3**: Styling the components and layout of the web pages.
+- **Responsive Design**: Ensuring the application is usable on various screen sizes and devices.
+
+### API Integration:
+- **Reddit API**: To fetch and display posts, search results, and detailed post information.
+- **Axios or Fetch API**: For handling HTTP requests to the Reddit API endpoints.
+
+### State Management:
+- **Redux Store**: For centralizing the state and managing state across the application.
+- **Redux Actions and Reducers**: For dispatching actions to update the state based on user interactions.
+- **Middleware (Redux Thunk)**: For handling asynchronous operations like API calls.
+
+### Version Control & Collaboration:
+- **Git**: For version control and keeping track of code changes.
+- **GitHub**: For hosting the repository and collaborating with others.
+
+### Build Tools & Development:
+- **Create React App**: For bootstrapping the project and providing build scripts.
+- **Node.js**: For running the development server.
+- **npm**: For managing project dependencies.
+
 ## Features
 
 ### 1. **Browse Popular Posts**

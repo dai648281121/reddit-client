@@ -4,20 +4,20 @@ import { searchPosts } from '../redux/actions';
 
 const Search = () => {
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('relevance'); // 默认按相关性排序
+  const [sort, setSort] = useState('relevance'); // Sort by relevance by default
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      dispatch(searchPosts(query, sort)); // 传递 query 和 sort 参数
+      dispatch(searchPosts(query, sort)); 
     }
   };
 
   return (
     <div className="search-container">
       <form onSubmit={handleSearch}>
-        {/* 搜索框 */}
+        {/* search box */}
         <input
           type="text"
           value={query}
@@ -25,14 +25,14 @@ const Search = () => {
           placeholder="Search posts..."
         />
         
-        {/* 排序选项 */}
+        {/* sort opstions */}
         <select value={sort} onChange={(e) => setSort(e.target.value)}>
           <option value="relevance">Relevance</option>
           <option value="hot">Hot</option>
           <option value="new">New</option>
         </select>
 
-        {/* 提交按钮 */}
+        {/* submit button */}
         <button type="submit">Search</button>
       </form>
     </div>
