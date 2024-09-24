@@ -63,9 +63,20 @@ const PostList = () => {
     }
   };
 
+  // This function ensures URLs use HTTPS instead of HTTP
   const secureUrl = (url) => {
     const decodedUrl = decodeURIComponent(url);
     return decodedUrl.startsWith('http://') ? decodedUrl.replace('http://', 'https://') : decodedUrl;
+  };
+
+  const getImageUrl = (post) => {
+    if (post.preview && post.preview.images && post.preview.images.length > 0) {
+      return secureUrl(post.preview.images[0].source.url);
+    }
+    if (post.thumbnail && post.thumbnail.startsWith('http')) {
+      return secureUrl(post.thumbnail);
+    }
+    return null;
   };
 
   if (loading) {
@@ -88,14 +99,16 @@ const PostList = () => {
           <h3>{post.title}</h3>
           <div>{post.selftext || '  '}</div>
 
-          {!post.media?.reddit_video && post.preview?.images?.length > 0 && (
+          {/* Handling image display */}
+          {!post.media?.reddit_video && getImageUrl(post) && (
             <img
-              src={secureUrl(post.preview.images[0].source.url)}
+              src={getImageUrl(post)}
               alt="Post media"
-              style={{ maxWidth: '100%' }}
+              style={{ width: '50%', height: '500px' }}
             />
           )}
 
+          {/* Handling Reddit video display */}
           {post.media?.reddit_video && (
             <div className="video-container">
               <iframe
@@ -122,6 +135,7 @@ const PostList = () => {
             </div>
           </div>
 
+          {/* Display comments section if they are toggled */}
           {showComments[post.id] && comments[post.id] && (
             <div className="comments-section">
               <ul>
