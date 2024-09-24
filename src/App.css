@@ -14,12 +14,13 @@
     indigo, 
     violet
   );
-  padding: 40px 20px;
+  padding: 20px 10px;  
   color: white;
-  font-size: 3rem;
+  font-size: 1.8rem; 
   font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
+  height: 180px;
+  margin-bottom: 20px;  
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
   position: relative;
@@ -31,12 +32,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120%;
-  height: 120%;
+  width: 95%;
+  height: 165%;
   background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
   z-index: -1;
   transform: translate(-50%, -50%);
-  animation: pulse 4s ease-in-out infinite;  /* Smooth pulsing animation */
+  animation: pulse 4s ease-in-out infinite;  
 }
 
 /* Animation for the pulsing glow effect */
@@ -55,21 +56,46 @@
   }
 }
 
-/* Header text with white shadow */
-/* Header text with white shadow and semi-transparent background */
+
 .App-header-text {
   position: relative;
-  display: inline-block;
-  padding: 10px 30px;
-  background: rgba(128, 128, 128, 0.5); /* Semi-transparent gray background */
-  border-radius: 10px; /* Slightly rounded corners */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
-               0 0 20px rgba(255, 255, 255, 0.8); /* White shadow for more depth */
-  animation: text-glow 3s ease-in-out infinite alternate;
-  z-index: 1; /* Ensure the background stays below the text */
+  z-index: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column; 
+}
+
+.header-logo {
+  width: 50px;  
+  height: auto; 
+  margin-right: 10px; 
+  border-radius: 50%;  
 }
 
 
+.App-header-text h1 {
+  padding: 15px 30px; 
+  background: rgba(128, 128, 128, 0.5); 
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
+               0 0 20px rgba(255, 255, 255, 0.8); 
+  animation: text-glow 3s ease-in-out infinite alternate;
+  display: flex;  
+  align-items: center; 
+  position: relative; 
+}
+
+
+.App-header-text h2 {
+  font-size: 1.3rem;  
+  color: rgba(255, 255, 255, 0.9);  
+  position: absolute;  
+  bottom: -20px;  
+  right: 400px;  
+}
+
+/* Text glowing animation */
 @keyframes text-glow {
   from {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
@@ -80,6 +106,7 @@
                  0 0 20px rgba(255, 255, 255, 0.8);
   }
 }
+
 
 /* Search container styles */
 .search-container {
@@ -145,22 +172,22 @@ button:hover {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50px;  /* Rounded pill shape */
+  border-radius: 50px;  
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .category-button:hover {
   background-color: #0056b3;
-  transform: translateY(-3px);  /* Slight lift on hover */
+  transform: translateY(-3px);
 }
 
 .category-button:active {
-  transform: translateY(1px);  /* Button pressed effect */
-  background-color: #004080;   /* Darker blue on click */
+  transform: translateY(1px); 
+  background-color: #004080; 
 }
 
 /* Post container styles */

@@ -1,18 +1,18 @@
+// src/App.js
 import React from 'react';
 import './App.css';
 import PostList from './components/PostList';
 import CategorySelector from './components/CategorySelector';
-import Search from './components/Search';  // 引入Search组件
+import Search from './components/Search';  
+import Header from './components/Header';  
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Reddit Client</h1>
-      </header>
-      <Search /> {/* 添加搜索框 */}
-      <CategorySelector />
-      <PostList /> {/* 直接展示帖子列表 */}
+      <Header title="RedditMinimal" subtitle="Browse the top posts！" /> {/* Using the Header component */}
+      <Search /> {/* Adding the search bar */}
+      <CategorySelector /> {/* Category selector for filtering posts */}
+      <PostList /> {/* Display the list of posts directly */}
     </div>
   );
 }

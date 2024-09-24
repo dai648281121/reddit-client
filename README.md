@@ -1,5 +1,5 @@
 
-# reddit-client
+# RedditMinimal
 
 This project is a simplified front-end application built using React and Redux. It integrates with the Reddit API to allow users to browse popular posts, filter by categories, search for posts, and view detailed post information, all with a clean and focused user experience.
 
@@ -21,7 +21,7 @@ This project is a simplified front-end application built using React and Redux. 
 ## Project Structure
 
 ```
-reddit-client
+RedditMinimal
 ├── node_modules
 ├── public
 │   ├── index.html

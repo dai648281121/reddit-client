@@ -1,23 +1,23 @@
 import axios from 'axios';
 
-// 发起请求的动作
+// Action for initiating the request
 export const fetchPostsRequest = () => ({
   type: 'FETCH_POSTS_REQUEST',
 });
 
-// 请求成功的动作
+// Action for successful data fetching
 export const fetchPostsSuccess = (posts) => ({
   type: 'FETCH_POSTS_SUCCESS',
   payload: posts,
 });
 
-// 请求失败的动作
+// Action for failed data fetching
 export const fetchPostsFailure = (error) => ({
   type: 'FETCH_POSTS_FAILURE',
   error,
 });
 
-// 异步函数：获取 Reddit 帖子，支持可选的分类参数
+// Async function to fetch Reddit posts, supporting an optional category parameter
 export const fetchPosts = (category = 'popular') => {
   return async (dispatch) => {
     dispatch(fetchPostsRequest());
@@ -31,7 +31,7 @@ export const fetchPosts = (category = 'popular') => {
   };
 };
 
-// 异步函数：搜索帖子，支持排序选项
+// Async function to search for posts, supporting sorting options
 export const searchPosts = (query, sort = 'relevance') => {
   return async (dispatch) => {
     dispatch(fetchPostsRequest());
