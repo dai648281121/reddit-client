@@ -193,7 +193,6 @@ button:hover {
 /* Post container styles */
 .post-container {
   max-width: 800px;
-  width: 800px;  /* Fixed width */
   margin: 20px auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -201,18 +200,6 @@ button:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
-
-@media (max-width: 820px) {
-  .post-container {
-    width: 100%;  /* Make the container take the full width on smaller screens */
-    max-width: 100%;
-  }
-
-  img, iframe {
-    width: 100%;  /* Ensure images and videos resize accordingly */
-  }
-}
-
 
 /* Post footer styles */
 .post-footer {
